@@ -10,7 +10,7 @@ import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation'
 import KeyboardScreen from './keyboard'
-
+import LiveTV from './liveTV'
 
 
 class InitialScreen extends Component {
@@ -20,6 +20,9 @@ class InitialScreen extends Component {
         <Text style={styles.welcome}>Welcome to React Native Garage !</Text>
         <TouchableOpacity style={styles.btn} onPress={() => this.props.navigation.navigate('keyboardRelatedRoute')}>
           <Text style={styles.instructions}>KeyBord Experiments</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.btn} onPress={() => this.props.navigation.navigate('liveTVRoute')}>
+          <Text style={styles.instructions}>Live TV</Text>
         </TouchableOpacity>
       </View>
     )
@@ -34,6 +37,9 @@ const Navigatior = createStackNavigator({
   },
   keyboardRelatedRoute: {
     screen: KeyboardScreen,
+  },
+  liveTVRoute: {
+    screen: LiveTV,
   }
 })
 
